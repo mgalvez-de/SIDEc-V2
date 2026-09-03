@@ -6,7 +6,7 @@
 
                 <!-- sidebar -->
                 <div class="flex items-center me-4">
-                    <button @click="sidebarOpen = true" class="text-white hover:text-white">
+                    <button @click="sidebarOpen = true" class="text-white hover:text-gray-200">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -15,20 +15,23 @@
 
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('dashboard') }}" class="flex items-center gap-2 text-white font-bold">
+                        <span class="text-lg tracking-wide">SIDEc</span>
+                        <span
+                            class="hidden sm:inline-block text-xs font-semibold bg-white text-ucsc-red px-2 py-0.5 rounded">
+                            UCSC
+                        </span>
                     </a>
                 </div>
-
 
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align ="right" width="48">
+                <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-black focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
@@ -43,7 +46,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('profile.edit')" >
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -57,6 +60,7 @@
                             </x-dropdown-link>
                         </form>
                     </x-slot>
+
                 </x-dropdown>
             </div>
 

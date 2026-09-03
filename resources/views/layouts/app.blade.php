@@ -17,10 +17,9 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100" x-data="{ sidebarOpen: false }">
+    <div class="min-h-screen bg-gray-100 flex flex-col" x-data="{ sidebarOpen: false }">
         @include('layouts.navigation')
         @include('layouts.sidebar')
-
 
         <!-- Page Heading -->
         @isset($header)
@@ -32,10 +31,21 @@
         @endisset
 
         <!-- Page Content -->
-        <main>
+        <main class="flex-1">
             {{ $slot }}
         </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 py-3 mt-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <span class="text-sm font-semibold text-gray-700">SIDEc</span>
+                <span class="text-xs text-gray-500 px-2 py-1 rounded-full bg-gray-100 border border-gray-200">
+                    Laboratorio de Bioensayos
+                </span>
+            </div>
+        </footer>
     </div>
 </body>
+
 
 </html>
