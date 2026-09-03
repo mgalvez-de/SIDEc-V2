@@ -14,8 +14,16 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                ucsc: {
+                    red: '#D12421',
+                    gray: '#646567',
+                },
+            },
         },
     },
+
+
 
     plugins: [forms],
 };
